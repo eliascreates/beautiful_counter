@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -34,6 +35,9 @@ class AppTheme {
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
+
+  static Brightness get currentSystemBrightness =>
+      PlatformDispatcher.instance.platformBrightness;
 
   static setStatusBarAndNavBarColor(ThemeMode themeMode) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
