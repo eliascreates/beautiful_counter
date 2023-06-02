@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppTheme {
-  static Color lightBackgroundColor = const Color(0xfff2f2f2);
-  static Color lightPrimaryColor = Colors.orange;
-  static Color lightAccentColor = Colors.orangeAccent;
-  static Color lightParticles = const Color(0xff393e46);
+  static Color lightBackgroundColor = const Color(0xff9f90a9);
+  static Color lightPrimaryColor = const Color(0xffc2b0cf);
+  static Color lightAccentColor = const Color(0xffba2872);
+  static Color lightSupportColor = const Color(0xff95dcdb);
 
-  static Color darkBackgroundColor = const Color(0xff222831);
-  static Color darkPrimaryColor = Colors.deepOrange;
-  static Color darkAccentColor = Colors.deepOrangeAccent;
-  static Color darkParticles = const Color(0xff393e46);
+  static Color darkBackgroundColor = const Color(0xff1e0f26);
+  static Color darkPrimaryColor = const Color(0xff3c1e4c);
+  static Color darkAccentColor = const Color(0xffba2872);
+  static Color darkSupportColor = const Color(0xff64738e); //7bbeca
 
   //ffa200
   // static Color darkParticles = const Color(0xff222831);
@@ -53,8 +53,8 @@ class AppTheme {
   }
 }
 
-
-//#f2f2f2 - White
-//#f96d00 - Orange
-//#393e46 - LightBlack
-//#222831 - Black
+extension ThemeAdditions on ThemeData {
+  Color get supportColor => brightness == Brightness.light
+      ? AppTheme.lightSupportColor
+      : AppTheme.darkSupportColor;
+}
