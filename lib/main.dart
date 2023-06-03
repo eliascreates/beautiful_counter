@@ -1,12 +1,21 @@
-import 'package:beautiful_counter/logic/cubit/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
+import 'logic/cubit/counter_cubit.dart';
+import 'logic/cubit/theme_cubit.dart';
 import 'core/constants/strings.dart';
 import 'core/themes/app_theme.dart';
 import 'presentation/router/app_router.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: await getApplicationDocumentsDirectory(),
+  );
+  // Bloc.observer = AppBlocObserver();
   runApp(const MainApp());
 }
 
@@ -20,6 +29,9 @@ class MainApp extends StatelessWidget {
         BlocProvider<ThemeCubit>(
           create: (context) => ThemeCubit(),
         ),
+        BlocProvider<CounterCubit>(
+          create: (context) => CounterCubit(),
+        )
       ],
       child: const CounterApp(),
     );

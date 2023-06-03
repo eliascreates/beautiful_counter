@@ -1,5 +1,8 @@
+import 'package:beautiful_counter/logic/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 /// the concept of the widget inspired
 /// from [Nikolay Kuchkarov](https://dribbble.com/shots/3368130-Stepper-Touch).
 /// And [Rahiche]
@@ -131,9 +134,9 @@ class _SlideStepperState extends State<SlideStepper>
     _controller.stop();
 
     if (_controller.value <= -0.20) {
-      // setState(() => 1);
+      context.read<CounterCubit>().decrement();
     } else if (_controller.value >= 0.20) {
-      // setState(() => 2);
+      context.read<CounterCubit>().increment();
     }
 
     final SpringDescription kDefaultSpring = SpringDescription.withDampingRatio(
