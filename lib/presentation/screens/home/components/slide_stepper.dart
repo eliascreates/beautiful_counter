@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
-
 /// the concept of the widget inspired
 /// from [Nikolay Kuchkarov](https://dribbble.com/shots/3368130-Stepper-Touch).
-/// i extended  the functionality to be more useful in real world applications
-///
+/// And [Rahiche]
 
 class SlideStepper extends StatefulWidget {
   const SlideStepper({super.key, this.withSpring = true});
@@ -20,7 +18,6 @@ class _SlideStepperState extends State<SlideStepper>
   late AnimationController _controller;
   late Animation _animation;
   double? _startAnimationPosX;
-  double? _startAnimationPosY;
 
   @override
   void initState() {
@@ -53,7 +50,7 @@ class _SlideStepperState extends State<SlideStepper>
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      child: Container(
+      child: SizedBox(
         width: 280.0,
         height: 120.0,
         child: Material(
@@ -117,7 +114,6 @@ class _SlideStepperState extends State<SlideStepper>
     RenderBox box = context.findRenderObject() as RenderBox;
     Offset local = box.globalToLocal(globalPosition);
     _startAnimationPosX = ((local.dx * 0.75) / box.size.width) - 0.4;
-    _startAnimationPosY = ((local.dy * 0.75) / box.size.height) - 0.4;
 
     return ((local.dx * 0.75) / box.size.width) - 0.4;
   }

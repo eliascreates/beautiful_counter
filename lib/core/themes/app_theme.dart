@@ -1,3 +1,4 @@
+import 'package:beautiful_counter/core/constants/strings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,12 +12,13 @@ class AppTheme {
   static Color darkBackgroundColor = const Color(0xff1e0f26);
   static Color darkPrimaryColor = const Color(0xff3c1e4c);
   static Color darkAccentColor = const Color(0xffba2872);
-  static Color darkSupportColor = const Color(0xff64738e); //7bbeca
+  static Color darkSupportColor = const Color(0xff7e91b4); //7e91b4
 
   //ffa200
   // static Color darkParticles = const Color(0xff222831);
 
   static final lightTheme = ThemeData(
+    fontFamily: Strings.monomaniacOne,
     colorScheme: ColorScheme.light(
       brightness: Brightness.light,
       primary: lightPrimaryColor,
@@ -27,6 +29,7 @@ class AppTheme {
   );
 
   static final darkTheme = ThemeData(
+    fontFamily: 'MonomaniacOne',
     colorScheme: ColorScheme.dark(
       brightness: Brightness.dark,
       primary: darkPrimaryColor,
