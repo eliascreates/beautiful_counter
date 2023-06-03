@@ -5,16 +5,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CounterNumber extends StatelessWidget {
-  const CounterNumber({
-    super.key,
-  });
+  const CounterNumber({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final counter = context
-        .select((CounterCubit counterCubit) => counterCubit.state.counter);
     return Text(
-      "$counter",
+      context
+          .select((CounterCubit counterCubit) => counterCubit.state.counter)
+          .toString(),
       textAlign: TextAlign.center,
       style: GoogleFonts.kumarOne(
           color: Theme.of(context).supportColor,

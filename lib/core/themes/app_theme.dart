@@ -14,9 +14,6 @@ class AppTheme {
   static Color darkAccentColor = const Color(0xffba2872);
   static Color darkSupportColor = const Color(0xff7e91b4); //7e91b4
 
-  //ffa200
-  // static Color darkParticles = const Color(0xff222831);
-
   static final lightTheme = ThemeData(
     fontFamily: Strings.monomaniacOne,
     colorScheme: ColorScheme.light(
