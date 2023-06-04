@@ -1,11 +1,25 @@
 import 'package:beautiful_counter/logic/cubit/counter_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:mocktail/mocktail.dart';
 
-void main() {
+class MockStorage extends Mock implements Storage {}
+
+void main() async {
+
   group('CounterCubit', () {
+    late Storage storage;
     late CounterCubit counterCubit;
 
     setUp(() {
+      storage = MockStorage();
+      when(
+        () => storage.write(
+          any(),
+          any<dynamic>(),
+        ),
+      ).thenAnswer((_) async => {});
+      HydratedBloc.storage = storage;
       counterCubit = CounterCubit();
     });
 

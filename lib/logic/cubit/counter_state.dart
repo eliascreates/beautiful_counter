@@ -7,8 +7,8 @@ class CounterState extends Equatable {
 
   Map<String, dynamic> toMap() => {'counter': counter};
 
-  factory CounterState.fromMap(Map<String, dynamic> map) {
-    if (map.isNotEmpty) {
+  factory CounterState.fromMap(Map<String, dynamic>? map) {
+    if (map case final map?) {
       return CounterState(counter: map['counter']);
     }
     return const CounterState(counter: 0);
