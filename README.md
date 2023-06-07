@@ -6,9 +6,10 @@ Built using the popular Flutter framework. This is a Beautiful Counter App. I re
 - Bloc State management
 - Bloc Architecture: Separation of concerns (Logic vs UI)
 - Flutter animations: Rive
-- Custom Theme: Light Mode vs Dark Mode (Dynamic change)
+- Custom Theming: Light Mode vs Dark Mode (Dynamic)
 - Data Persistence: Hive/Hydrated Bloc
-- Modularize: Refactoring Widgets
+- Modularization: Refactoring Widgets
+- Responsive Design: Looks good on mobile and tablet
 - Event-driven programming
 - Pubspec.yaml for external Packages like Google Font assets
 
