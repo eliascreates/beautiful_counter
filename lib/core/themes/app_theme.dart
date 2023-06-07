@@ -2,6 +2,7 @@ import 'package:beautiful_counter/core/constants/strings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static Color lightBackgroundColor = const Color(0xff9f90a9);
@@ -16,6 +17,10 @@ class AppTheme {
 
   static final lightTheme = ThemeData(
     fontFamily: Strings.monomaniacOne,
+    textTheme: GoogleFonts.kumarOneTextTheme().apply(
+      bodyColor: lightSupportColor,
+      displayColor: lightSupportColor,
+    ),
     colorScheme: ColorScheme.light(
       brightness: Brightness.light,
       primary: lightPrimaryColor,
@@ -27,6 +32,10 @@ class AppTheme {
 
   static final darkTheme = ThemeData(
     fontFamily: 'MonomaniacOne',
+    textTheme: GoogleFonts.kumarOneTextTheme().apply(
+      bodyColor: darkSupportColor,
+      displayColor: darkSupportColor,
+    ),
     colorScheme: ColorScheme.dark(
       brightness: Brightness.dark,
       primary: darkPrimaryColor,

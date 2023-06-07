@@ -2,6 +2,7 @@ import 'package:beautiful_counter/logic/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 /// the concept of the widget inspired
 /// from [Nikolay Kuchkarov](https://dribbble.com/shots/3368130-Stepper-Touch).
@@ -54,12 +55,12 @@ class _SlideStepperState extends State<SlideStepper>
   Widget build(BuildContext context) {
     return FittedBox(
       child: SizedBox(
-        width: 280.0,
-        height: 120.0,
+        width: SizerUtil.deviceType == DeviceType.mobile ? 75.w : 35.w,
+        height: SizerUtil.deviceType == DeviceType.mobile ? 15.h : 12.h,
         child: Material(
           type: MaterialType.canvas,
           clipBehavior: Clip.antiAlias,
-          borderRadius: BorderRadius.circular(60.0),
+          borderRadius: BorderRadius.circular(60.0.sp),
           color: Theme.of(context).colorScheme.secondary.withOpacity(0.2),
           child: Stack(
             alignment: Alignment.center,
@@ -68,7 +69,8 @@ class _SlideStepperState extends State<SlideStepper>
                 left: 10.0,
                 child: Icon(
                   Icons.remove,
-                  size: 40.0,
+                  size:
+                      SizerUtil.deviceType == DeviceType.mobile ? 34.sp : 15.sp,
                   color: Theme.of(context).iconTheme.color?.withOpacity(0.7),
                 ),
               ),
@@ -76,7 +78,8 @@ class _SlideStepperState extends State<SlideStepper>
                 right: 10.0,
                 child: Icon(
                   Icons.add,
-                  size: 40.0,
+                  size:
+                      SizerUtil.deviceType == DeviceType.mobile ? 34.sp : 15.sp,
                   color: Theme.of(context).iconTheme.color?.withOpacity(0.7),
                 ),
               ),
@@ -99,7 +102,9 @@ class _SlideStepperState extends State<SlideStepper>
                               .iconTheme
                               .color
                               ?.withOpacity(0.7),
-                          size: 50,
+                          size: SizerUtil.deviceType == DeviceType.mobile
+                              ? 42.sp
+                              : 18.sp,
                         ),
                       ),
                     ),

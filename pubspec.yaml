@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   animate_do: ^3.0.2
+  device_preview: ^1.1.0
   equatable: ^2.0.5
   flutter:
     sdk: flutter
@@ -17,6 +18,7 @@ dependencies:
   mocktail: ^0.3.0
   path_provider: ^2.0.15
   rive: ^0.11.2
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
